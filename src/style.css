@@ -1,0 +1,140 @@
+@font-face {
+	font-family: "ChivoMono";
+	src:
+		url("/ChivoMono-VariableFont_wght.ttf") format("woff2");
+}
+
+
+html {
+	color-scheme: dark;
+	/*
+	--color-bg: hsl(0, 0%, 100%);
+	--color-bg-light: hsl(0, 0%, 100%);
+	  */
+	--color-bg-components: 232, 11%, 15%;
+	--color-bg: hsl(var(--color-bg-components));
+
+	--color-bg-light-components: 233, 8%, 19%;
+	--color-bg-light: hsl(233, 8%, 19%);
+	--color-bg-light2: hsl(222, 8%, 24%);
+	--color-bg-light3: hsl(222, 8%, 28%);
+	background-color: var(--color-bg);
+	height: 100%;
+	--card-width: min(320px, 98vw);
+	--lcard-width: min(640px, 98vw);
+	--surface-shadow: inset 0 0 0.5px 1px hsla(0, 0%, 100%, 0.075),
+			/* shadow ring 👇 */ 0 0 0 1px hsla(0, 0%, 0%, 0.05),
+			/* multiple soft shadows 👇 */ 0 0.3px 0.4px hsla(0, 0%, 0%, 0.02),
+			0 0.9px 1.5px hsla(0, 0%, 0%, 0.045), 0 3.5px 6px hsla(0, 0%, 0%, 0.09);
+}
+
+.caption {
+	font-size: 14px;
+	color: hsl(222, 8%, 60%);
+}
+
+body {
+	min-height: 100%;
+}
+
+html, button, input, textarea, input::file-selector-button {
+	font-family: "ChivoMono";
+	font-variant-ligatures: none;
+}
+
+input, textarea {
+	caret-color: rgba(33, 180, 73, 1)
+}
+
+html, body, h1, h2, h3, h4, input::file-selector-button {
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+}
+
+button, textarea, input, input::file-selector-button {
+	border: none;
+	outline: none;
+}
+
+a {
+	all: unset;
+}
+
+
+input[type="text"], input[type="password"] {
+	padding: 0 16px 0 16px;
+	box-shadow: inset 0 0 0.5px 1px hsla(0, 0%, 100%, 0.075),
+		/* shadow ring 👇 */ 0 0 0 1px hsla(0, 0%, 0%, 0.05),
+		/* multiple soft shadows 👇 */ 0 0.3px 0.4px hsla(0, 0%, 0%, 0.02),
+		0 0.9px 1.5px hsla(0, 0%, 0%, 0.045);
+	background-color: var(--color-bg-light2);
+	font-size: 16px;
+	border-radius: 8px;
+	transition: box-shadow 150ms;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+	box-shadow: inset 0 0 0.5px 1px hsla(0, 0%, 100%, 0.075),
+		/* shadow ring 👇 */ 0 0 0 2px rgba(33, 180, 73, 1),
+		/* multiple soft shadows 👇 */ 0 0.3px 0.4px hsla(0, 0%, 0%, 0.02),
+		0 0.9px 1.5px hsla(0, 0%, 0%, 0.045), 0 3.5px 6px hsla(0, 0%, 0%, 0.09);
+}
+
+.surface {
+	background: var(--color-bg-light);
+	box-shadow: var(--surface-shadow);
+}
+
+button:not(:disabled) {
+	cursor: pointer;
+}
+
+button, input::file-selector-button{
+	font-size: 16px;
+	padding: 0 24px 0 24px;
+	/*background-color: #2bd95a;*/
+	border-radius: 9999px;
+	background: var(--color-bg-light2);
+	transition: box-shadow 200ms, background-color 200ms;
+}
+
+:is(button, input::file-selector-button):not(:disabled) {
+		box-shadow: inset 0 0 0.5px 1px hsla(0, 0%,  
+		      100%, 0.075),
+			/* shadow ring 👇 */ 0 0 0 1px hsla(0, 0%, 0%, 0.05),
+		      /* multiple soft shadows 👇 */
+		      0 0.3px 0.4px hsla(0, 0%, 0%, 0.02),
+		      0 0.9px 1.5px hsla(0, 0%, 0%, 0.045);
+}
+
+button:hover:not(.colored), input::file-selector-button:hover {
+	background-color: var(--color-bg-light3);
+}
+:is(button, input::file-selector-button):hover {
+		box-shadow: inset 0 0 0.5px 1px hsla(0, 0%,  
+		      100%, 0.075),
+			/* shadow ring 👇 */ 0 0 0 1px hsla(0, 0%, 0%, 0.05),
+		      /* multiple soft shadows 👇 */
+		      0 0.3px 0.4px hsla(0, 0%, 0%, 0.02),
+		      0 0.9px 1.5px hsla(0, 0%, 0%, 0.045),
+		      0 3.5px 6px hsla(0, 0%, 0%, 0.09);
+}
+
+
+button.colored {
+	background: rgba(33, 180, 73, 1);
+	background: linear-gradient(90deg, rgba(33, 180, 73, 1) 0%, rgba(14, 136, 49, 1) 100%);
+}
+
+button.icon-button {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 12px;
+}
+
+*::selection {
+	background: rgb(143,242,170);
+	color: black;
+}
